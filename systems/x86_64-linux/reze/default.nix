@@ -5,12 +5,16 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+    "pipe-operators"
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -44,7 +48,7 @@
   # Enable the MATE Desktop Environment.
   services.xserver.displayManager.lightdm.enable = true;
   services.xserver.desktopManager.mate.enable = true;
-  services.xserver.desktopManager.mate.extraPanelApplets = with pkgs; [ mate-applets ] ; 
+  services.xserver.desktopManager.mate.extraPanelApplets = with pkgs; [ mate-applets ];
 
   services.xserver.xkbOptions = "ctrl:nocaps";
   console.useXkbConfig = true;
@@ -81,9 +85,13 @@
   users.users."rafa" = {
     isNormalUser = true;
     description = "Rafa Yurei";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
+    shell = pkgs.zsh;
     packages = with pkgs; [
-    #  thunderbird
+      #  thunderbird
     ];
   };
 
@@ -102,11 +110,19 @@
     gtk-engine-murrine
     telegram-desktop
     ulauncher
-    git 
+    git
     unzip
     fractal
     nixd
     nil
+    zed-editor
+    openrgb
+  ];
+
+  fonts.packages = with pkgs; [
+    mplus-outline-fonts.githubRelease
+    dina-font
+    nerd-fonts.hack
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -143,6 +159,40 @@
     });
   '';
 
-  services.relago = {enable = true; nix-config = "/etc/nixos";};
+  services.relago = {
+    enable = true;
+    nix-config = "/home/rafa/niew";
+  };
 
+  services.flatpak.enable = true;
+  xdg.portal.enable = true;
+
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    autosuggestions.enable = true;
+    syntaxHighlighting.enable = true;
+
+    ohMyZsh = {
+      enable = true;
+      plugins = [
+        "git"
+        "z"
+      ];
+      theme = "robbyrussell";
+    };
+
+    shellAliases = {
+      ll = "ls -l";
+      edit = "sudo -e";
+      update = "sudo nixos-rebuild switch";
+    };
+  };
+
+  services.hardware.openrgb = {
+    enable = true;
+    package = pkgs.openrgb-with-all-plugins;
+    motherboard = "intel";
+    server.port = 6742;
+  };
 }
