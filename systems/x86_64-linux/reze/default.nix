@@ -46,7 +46,7 @@
   services.xserver.enable = true;
 
   # Enable the MATE Desktop Environment.
-  services.xserver.displayManager.lightdm.enable = true;
+  # services.xserver.displayManager.lightdm.enable = true;
   services.xserver.desktopManager.mate.enable = true;
   services.xserver.desktopManager.mate.extraPanelApplets = with pkgs; [ mate-applets ];
 
@@ -79,7 +79,8 @@
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
+  services.xserver.libinput.enable = true;
+  services.xserver.libinput.touchpad.tapping = true; # Add tap to click in GDM
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users."rafa" = {
@@ -195,4 +196,17 @@
     motherboard = "intel";
     server.port = 6742;
   };
+
+  steam.enable = true;
+
+  programs.nix-data = {
+    enable = true;
+    systemconfig = "/home/rafa/niew/systems/x86_64-linux/reze/default.nix";
+    flake = "/home/rafa/niew/flake.nix";
+    flakearg = "reze"; # your hostname
+  };
+
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
+  gnome.enable = true;
 }

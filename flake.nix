@@ -17,6 +17,11 @@
         nixpkgs-unstable.follows = "nixpkgs-unstable";
       };
     };
+
+    nix-data = {
+      url = "github:xinux-org/nix-data";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -28,6 +33,7 @@
 
       systems.modules.nixos = with inputs; [
         relago.nixosModules.default
+        nix-data.nixosModules.nix-data
       ];
 
       snowfall = {
