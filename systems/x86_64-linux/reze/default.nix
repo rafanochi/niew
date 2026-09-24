@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   imports = [
@@ -17,8 +17,14 @@
   ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
+  # boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.limine.enable = true;
+  boot.loader.limine.secureBoot.enable = true;
+  boot.loader.limine.extraEntries = ''
+    /Windows
+        protocol: efi
+        path: boot():/EFI/Microsoft/Boot/bootmgfw.efi'';
 
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -118,6 +124,9 @@
     nil
     zed-editor
     openrgb
+
+    wl-clipboard
+    sbctl
   ];
 
   fonts.packages = with pkgs; [
@@ -168,6 +177,8 @@
   services.flatpak.enable = true;
   xdg.portal.enable = true;
 
+  programs.starship.enable = true;
+
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -180,7 +191,6 @@
         "git"
         "z"
       ];
-      theme = "robbyrussell";
     };
 
     shellAliases = {
@@ -206,7 +216,55 @@
     flakearg = "reze"; # your hostname
   };
 
+  programs.direnv.enable = true;
+
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
   gnome.enable = true;
+
+  virtualisation.waydroid.enable = true;
+  # Newer kernel versions may need
+  virtualisation.waydroid.package = pkgs.waydroid-nftables;
+
+  # Power management
+  powerManagement.enable = true;
+  powerManagement.powertop.enable = true;
+
+  services.udev.extraRules =
+    let
+      mkRule = as: lib.concatStringsSep ", " as;
+      mkRules = rs: lib.concatStringsSep "\n" rs;
+    in
+    mkRules ([
+      (mkRule [
+        ''ACTION=="add|change"''
+        ''SUBSYSTEM=="block"''
+        ''KERNEL=="sd[a-z]"''
+        ''ATTR{queue/rotational}=="1"''
+        ''RUN+="${pkgs.hdparm}/bin/hdparm -B 90 -S 41 /dev/%k"''
+      ])
+    ]);
+
+  # Laptop
+  services.logind.settings.Login = {
+    HandleLidSwitch = "hibernate";
+    HandleLidSwitchExternalPower = "lock";
+    HandleLidSwitchDocked = "ignore";
+  };
+
+  # CPU performance scaling
+  services.thermald.enable = true;
+  services.power-profiles-daemon.enable = false;
+
+  services.auto-cpufreq.enable = true;
+  services.auto-cpufreq.settings = {
+    battery = {
+      governor = "powersave";
+      turbo = "never";
+    };
+    charger = {
+      governor = "performance";
+      turbo = "auto";
+    };
+  };
 }
