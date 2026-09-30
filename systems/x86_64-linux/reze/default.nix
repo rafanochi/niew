@@ -99,6 +99,7 @@
     shell = pkgs.zsh;
     packages = with pkgs; [
       #  thunderbird
+      wl-clipboard
     ];
   };
 
@@ -125,7 +126,6 @@
     zed-editor
     openrgb
 
-    wl-clipboard
     sbctl
   ];
 
@@ -197,6 +197,9 @@
       ll = "ls -l";
       edit = "sudo -e";
       update = "sudo nixos-rebuild switch";
+      allow = "direnv allow";
+      reload = "direnv reload";
+      open = "xdg-open";
     };
   };
 
@@ -217,6 +220,8 @@
   };
 
   programs.direnv.enable = true;
+  programs.direnv.nix-direnv.enable = true;
+  programs.direnv.silent = true;
 
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
@@ -246,25 +251,25 @@
     ]);
 
   # Laptop
-  services.logind.settings.Login = {
-    HandleLidSwitch = "hibernate";
-    HandleLidSwitchExternalPower = "lock";
-    HandleLidSwitchDocked = "ignore";
-  };
+  # services.logind.settings.Login = {
+  #   HandleLidSwitch = "suspend";
+  #   HandleLidSwitchExternalPower = "lock";
+  #   HandleLidSwitchDocked = "ignore";
+  # };
 
   # CPU performance scaling
   services.thermald.enable = true;
-  services.power-profiles-daemon.enable = false;
+  services.power-profiles-daemon.enable = true;
 
-  services.auto-cpufreq.enable = true;
-  services.auto-cpufreq.settings = {
-    battery = {
-      governor = "powersave";
-      turbo = "never";
-    };
-    charger = {
-      governor = "performance";
-      turbo = "auto";
-    };
-  };
+  services.auto-cpufreq.enable = false;
+  # services.auto-cpufreq.settings = {
+  #   battery = {
+  #     governor = "powersave";
+  #     turbo = "never";
+  #   };
+  #   charger = {
+  #     governor = "performance";
+  #     turbo = "auto";
+  #   };
+  # };
 }
