@@ -100,6 +100,7 @@
     packages = with pkgs; [
       #  thunderbird
       wl-clipboard
+      disko
     ];
   };
 
@@ -127,6 +128,7 @@
     openrgb
 
     sbctl
+    disko
   ];
 
   fonts.packages = with pkgs; [
