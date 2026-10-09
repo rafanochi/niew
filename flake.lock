@@ -1,5 +1,92 @@
 {
   "nodes": {
+    "aagl": {
+      "inputs": {
+        "flake-compat": [
+          "xinux-modules",
+          "xinux-lib",
+          "flake-compat"
+        ],
+        "nixpkgs": [
+          "xinux-modules",
+          "nixpkgs"
+        ],
+        "rust-overlay": "rust-overlay"
+      },
+      "locked": {
+        "lastModified": 1789138122,
+        "narHash": "sha256-mh+ZiGCtHAo0xIi1yaNjHsftfnlWz9JiYwHCyT16yIE=",
+        "ref": "refs/heads/main",
+        "rev": "d82d6d6f66caf4b63fb154e62fad83c627874127",
+        "shallow": true,
+        "type": "git",
+        "url": "https://git.oss.uzinfocom.uz/mirrors/aagl-gtk-on-nix"
+      },
+      "original": {
+        "shallow": true,
+        "type": "git",
+        "url": "https://git.oss.uzinfocom.uz/mirrors/aagl-gtk-on-nix"
+      }
+    },
+    "bleur": {
+      "inputs": {
+        "flake-parts": [
+          "xinux-modules",
+          "flake-parts"
+        ],
+        "nixpkgs": [
+          "xinux-modules",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1782132215,
+        "narHash": "sha256-pzMubbaKsivqUWEMpt/fIXguDjG1/2tcMFZf5vxo/AU=",
+        "ref": "main",
+        "rev": "41312b84801bb7314f12390af4c931aa3b50c789",
+        "shallow": true,
+        "type": "git",
+        "url": "https://git.oss.uzinfocom.uz/bleur/bleur"
+      },
+      "original": {
+        "ref": "main",
+        "shallow": true,
+        "type": "git",
+        "url": "https://git.oss.uzinfocom.uz/bleur/bleur"
+      }
+    },
+    "cachyos-kernel": {
+      "inputs": {
+        "flake-compat": [
+          "xinux-modules",
+          "xinux-lib",
+          "flake-compat"
+        ],
+        "flake-parts": [
+          "xinux-modules",
+          "flake-parts"
+        ],
+        "nixpkgs": [
+          "xinux-modules",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1791242599,
+        "narHash": "sha256-Q81vP/PueET3wcdEkjKUCAw+m+XN04bVgCbkCEawkio=",
+        "ref": "master",
+        "rev": "a701b7e6653f660096d5223b0fa1a663d05b6506",
+        "shallow": true,
+        "type": "git",
+        "url": "https://git.oss.uzinfocom.uz/mirrors/nix-cachyos-kernel"
+      },
+      "original": {
+        "ref": "master",
+        "shallow": true,
+        "type": "git",
+        "url": "https://git.oss.uzinfocom.uz/mirrors/nix-cachyos-kernel"
+      }
+    },
     "crane": {
       "locked": {
         "lastModified": 1780532242,
@@ -13,6 +100,59 @@
         "owner": "ipetkov",
         "repo": "crane",
         "type": "github"
+      }
+    },
+    "crane_2": {
+      "locked": {
+        "lastModified": 1780532242,
+        "narHash": "sha256-D+BsdpxmtUwtqGoY0IXPhHgTlmqgcZKCEo1oMyn7ep0=",
+        "owner": "ipetkov",
+        "repo": "crane",
+        "rev": "59a82a1222dd3b2080b5cc52a1a2e8d5f1b77f37",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ipetkov",
+        "repo": "crane",
+        "type": "github"
+      }
+    },
+    "e-imzo-manager": {
+      "inputs": {
+        "git-hooks": [
+          "xinux-modules",
+          "xinux-lib",
+          "git-hooks"
+        ],
+        "nix-appimage": "nix-appimage",
+        "nixpkgs": [
+          "xinux-modules",
+          "nixpkgs"
+        ],
+        "treefmt-nix": [
+          "xinux-modules",
+          "xinux-lib",
+          "treefmt-nix"
+        ],
+        "xinux-lib": [
+          "xinux-modules",
+          "xinux-lib"
+        ]
+      },
+      "locked": {
+        "lastModified": 1790920889,
+        "narHash": "sha256-C45sCx1DSAVY0npFi1WcVLnwhdLXgoc3iYgfGKwh2Ok=",
+        "ref": "main",
+        "rev": "93fc1fd4025438af42f2b13a8117a445d511f9b0",
+        "shallow": true,
+        "type": "git",
+        "url": "https://git.oss.uzinfocom.uz/xinux/e-imzo-manager"
+      },
+      "original": {
+        "ref": "main",
+        "shallow": true,
+        "type": "git",
+        "url": "https://git.oss.uzinfocom.uz/xinux/e-imzo-manager"
       }
     },
     "flake-compat": {
@@ -63,6 +203,22 @@
         "type": "github"
       }
     },
+    "flake-compat_4": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1767039857,
+        "narHash": "sha256-vNpUSpF5Nuw8xvDLj2KCwwksIbjua2LZCqhV1LNRDns=",
+        "owner": "NixOS",
+        "repo": "flake-compat",
+        "rev": "5edf11c44bc78a0d334f6334cdaf7d60d732daab",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "flake-compat",
+        "type": "github"
+      }
+    },
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": "nixpkgs-lib"
@@ -79,6 +235,29 @@
         "owner": "hercules-ci",
         "repo": "flake-parts",
         "type": "github"
+      }
+    },
+    "flake-parts_2": {
+      "inputs": {
+        "nixpkgs-lib": [
+          "xinux-modules",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1790898470,
+        "narHash": "sha256-zTwuwezD0w3hpga6a6P8emidzAZFyWqlNeRBlpWOOl8=",
+        "ref": "main",
+        "rev": "024633cd702b10285db5cb19b40ad48d2399ba60",
+        "shallow": true,
+        "type": "git",
+        "url": "https://git.oss.uzinfocom.uz/mirrors/flake-parts"
+      },
+      "original": {
+        "ref": "main",
+        "shallow": true,
+        "type": "git",
+        "url": "https://git.oss.uzinfocom.uz/mirrors/flake-parts"
       }
     },
     "flake-utils": {
@@ -137,6 +316,28 @@
         "type": "github"
       }
     },
+    "flake-utils-plus_3": {
+      "inputs": {
+        "flake-utils": [
+          "xinux-modules",
+          "flake-utils"
+        ]
+      },
+      "locked": {
+        "lastModified": 1779563444,
+        "narHash": "sha256-+rEagECcF6BhWfLs8VCkPqsBuxxSSIRxMlgjXj6G8UQ=",
+        "owner": "gytis-ivaskevicius",
+        "repo": "flake-utils-plus",
+        "rev": "a00f6f51907b5c74d2fde086b10b19d446d15717",
+        "type": "github"
+      },
+      "original": {
+        "owner": "gytis-ivaskevicius",
+        "ref": "v1.6.0",
+        "repo": "flake-utils-plus",
+        "type": "github"
+      }
+    },
     "flake-utils_2": {
       "inputs": {
         "systems": "systems_2"
@@ -172,6 +373,55 @@
         "type": "github"
       }
     },
+    "flake-utils_4": {
+      "inputs": {
+        "systems": [
+          "xinux-modules",
+          "systems"
+        ]
+      },
+      "locked": {
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "git-hooks": {
+      "inputs": {
+        "flake-compat": [
+          "xinux-modules",
+          "xinux-lib",
+          "flake-compat"
+        ],
+        "gitignore": "gitignore",
+        "nixpkgs": [
+          "xinux-modules",
+          "xinux-lib",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1772893680,
+        "narHash": "sha256-JDqZMgxUTCq85ObSaFw0HhE+lvdOre1lx9iI6vYyOEs=",
+        "owner": "cachix",
+        "repo": "git-hooks.nix",
+        "rev": "8baab586afc9c9b57645a734c820e4ac0a604af9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "cachix",
+        "repo": "git-hooks.nix",
+        "type": "github"
+      }
+    },
     "git-hooks-nix": {
       "inputs": {
         "flake-compat": "flake-compat_2",
@@ -191,6 +441,160 @@
       "original": {
         "owner": "cachix",
         "repo": "git-hooks.nix",
+        "type": "github"
+      }
+    },
+    "gitignore": {
+      "inputs": {
+        "nixpkgs": [
+          "xinux-modules",
+          "xinux-lib",
+          "git-hooks",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1709087332,
+        "narHash": "sha256-HG2cCnktfHsKV0s4XW83gU3F57gaTljL9KNSuG6bnQs=",
+        "owner": "hercules-ci",
+        "repo": "gitignore.nix",
+        "rev": "637db329424fd7e46cf4185293b9cc8c88c95394",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hercules-ci",
+        "repo": "gitignore.nix",
+        "type": "github"
+      }
+    },
+    "helium": {
+      "inputs": {
+        "nixpkgs": [
+          "xinux-modules",
+          "nixpkgs"
+        ],
+        "nixpkgs-darwin": "nixpkgs-darwin",
+        "utils": "utils"
+      },
+      "locked": {
+        "lastModified": 1791176322,
+        "narHash": "sha256-yr1b5Yql7XE3L/Q9urGNhnNXBAa14S3nfY7A+twhRIM=",
+        "ref": "refs/heads/main",
+        "rev": "14a8f68137d4db62213555937f23ad95e7f8c4e6",
+        "shallow": true,
+        "type": "git",
+        "url": "https://git.oss.uzinfocom.uz/mirrors/helium-browser-nix-flake"
+      },
+      "original": {
+        "shallow": true,
+        "type": "git",
+        "url": "https://git.oss.uzinfocom.uz/mirrors/helium-browser-nix-flake"
+      }
+    },
+    "home-manager": {
+      "inputs": {
+        "nixpkgs": [
+          "xinux-modules",
+          "zen-browser",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1790819692,
+        "narHash": "sha256-rvubAPbh3QCliic3sAK+CXTrPCGgJstY52OTs/5H1J4=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "c8ecc29e5175452bee4a2aa1ba2383856d795338",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "libxinux": {
+      "inputs": {
+        "nixpkgs": [
+          "xinux-modules",
+          "nixpkgs"
+        ],
+        "xinux-lib": [
+          "xinux-modules",
+          "xinux-lib"
+        ]
+      },
+      "locked": {
+        "lastModified": 1770676941,
+        "narHash": "sha256-L9RXw3JqpeaJ99wE1Fbe646viYMpP6WchSCTOopr8p0=",
+        "ref": "main",
+        "rev": "203138995a1690c96f4d5476bd27bc5aa1cfb4ee",
+        "shallow": true,
+        "type": "git",
+        "url": "https://git.oss.uzinfocom.uz/xinux/libxinux"
+      },
+      "original": {
+        "ref": "main",
+        "shallow": true,
+        "type": "git",
+        "url": "https://git.oss.uzinfocom.uz/xinux/libxinux"
+      }
+    },
+    "mac-style-plymouth": {
+      "inputs": {
+        "flake-utils": [
+          "xinux-modules",
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "xinux-modules",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1763734980,
+        "narHash": "sha256-7p2OYlhPiHXNYHcBvBkvz9cxyku1C0uTe6p0Wtiwl1k=",
+        "ref": "master",
+        "rev": "6c0b648e35ba6394c8aff1421be296e331c3e8d4",
+        "shallow": true,
+        "type": "git",
+        "url": "https://git.oss.uzinfocom.uz/xinux/xinux-plymouth-theme"
+      },
+      "original": {
+        "ref": "master",
+        "shallow": true,
+        "type": "git",
+        "url": "https://git.oss.uzinfocom.uz/xinux/xinux-plymouth-theme"
+      }
+    },
+    "nix-appimage": {
+      "inputs": {
+        "flake-compat": [
+          "xinux-modules",
+          "xinux-lib",
+          "flake-compat"
+        ],
+        "flake-utils": [
+          "xinux-modules",
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "xinux-modules",
+          "e-imzo-manager",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1757920913,
+        "narHash": "sha256-jd0QwCVz4O1sHHkeaZILD/7D6oyalceEJ4EFnWCgm0k=",
+        "owner": "ralismark",
+        "repo": "nix-appimage",
+        "rev": "7946addbc0d97e358a6d7aefe5e82310f0fe6b18",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ralismark",
+        "repo": "nix-appimage",
         "type": "github"
       }
     },
@@ -215,6 +619,71 @@
         "type": "github"
       }
     },
+    "nix-software-center": {
+      "inputs": {
+        "git-hooks": [
+          "xinux-modules",
+          "xinux-lib",
+          "git-hooks"
+        ],
+        "nixos-appstream-data": "nixos-appstream-data",
+        "nixpkgs": [
+          "xinux-modules",
+          "nixpkgs"
+        ],
+        "treefmt-nix": [
+          "xinux-modules",
+          "xinux-lib",
+          "treefmt-nix"
+        ],
+        "xinux-lib": [
+          "xinux-modules",
+          "xinux-lib"
+        ]
+      },
+      "locked": {
+        "lastModified": 1791371485,
+        "narHash": "sha256-sBzpNBqAtS9RdUN2XV86i+ZSTQFmxt2Tt0DP66M2CL4=",
+        "ref": "main",
+        "rev": "a9bc51b7d681a738546232b12f420993d2447440",
+        "shallow": true,
+        "type": "git",
+        "url": "https://git.oss.uzinfocom.uz/xinux/software-center"
+      },
+      "original": {
+        "ref": "main",
+        "shallow": true,
+        "type": "git",
+        "url": "https://git.oss.uzinfocom.uz/xinux/software-center"
+      }
+    },
+    "nixos-appstream-data": {
+      "inputs": {
+        "flake-utils": [
+          "xinux-modules",
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "xinux-modules",
+          "nix-software-center",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1779897478,
+        "narHash": "sha256-XvfEuWs3XglA8F8pcZJs6Dt2HGTUEOrldkbZ+LKWcaw=",
+        "owner": "bahrom04-lab",
+        "repo": "nixos-appstream-data-fork",
+        "rev": "a76fc5b7a61bca4f7a0b6890eb1aa22169a692d0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "bahrom04-lab",
+        "ref": "update-icons",
+        "repo": "nixos-appstream-data-fork",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1788921488,
@@ -227,6 +696,22 @@
       "original": {
         "owner": "NixOS",
         "ref": "nixos-26.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs-darwin": {
+      "locked": {
+        "lastModified": 1790772421,
+        "narHash": "sha256-754eQtr0m8xKtNnKYhX7ukI7XaA7oeiQpui1LiEuhyU=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "e49322d1ec25b45f7c587c5fd69ac826d1a57dbc",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-26.05-darwin",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -262,6 +747,23 @@
         "type": "github"
       }
     },
+    "nixpkgs_3": {
+      "locked": {
+        "lastModified": 1791260994,
+        "narHash": "sha256-Miqqk/ammqnTUxaoCyvtwoPeLbI1ksFyLxi/CazZpWY=",
+        "ref": "nixos-unstable",
+        "rev": "151fa4e8ddfdd8dd25d945ad94ed54a13de9f6e4",
+        "shallow": true,
+        "type": "git",
+        "url": "https://git.oss.uzinfocom.uz/xinux/nixpkgs"
+      },
+      "original": {
+        "ref": "nixos-unstable",
+        "shallow": true,
+        "type": "git",
+        "url": "https://git.oss.uzinfocom.uz/xinux/nixpkgs"
+      }
+    },
     "relago": {
       "inputs": {
         "crane": "crane",
@@ -288,12 +790,72 @@
         "url": "https://git.oss.uzinfocom.uz/xinux/relago.git"
       }
     },
+    "relago_2": {
+      "inputs": {
+        "crane": "crane_2",
+        "flake-parts": [
+          "xinux-modules",
+          "flake-parts"
+        ],
+        "git-hooks-nix": [
+          "xinux-modules",
+          "xinux-lib",
+          "git-hooks"
+        ],
+        "nixpkgs": [
+          "xinux-modules",
+          "nixpkgs"
+        ],
+        "treefmt-nix": [
+          "xinux-modules",
+          "xinux-lib",
+          "treefmt-nix"
+        ]
+      },
+      "locked": {
+        "lastModified": 1791346838,
+        "narHash": "sha256-cDsYpbh3NgyHk12voE2rzYA/SVgY4nBbQkTaqTKVafI=",
+        "ref": "main",
+        "rev": "c3f875803b247d353636767d8d6f2e91b518eac6",
+        "revCount": 62,
+        "type": "git",
+        "url": "https://git.oss.uzinfocom.uz/xinux/relago"
+      },
+      "original": {
+        "ref": "main",
+        "type": "git",
+        "url": "https://git.oss.uzinfocom.uz/xinux/relago"
+      }
+    },
     "root": {
       "inputs": {
         "nix-data": "nix-data",
         "nixpkgs": "nixpkgs",
         "relago": "relago",
-        "snowfall-lib": "snowfall-lib"
+        "snowfall-lib": "snowfall-lib",
+        "xinux-modules": "xinux-modules"
+      }
+    },
+    "rust-overlay": {
+      "inputs": {
+        "nixpkgs": [
+          "xinux-modules",
+          "aagl",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1785476452,
+        "narHash": "sha256-/CXwCFPS41rb/JI2VitKCgVK6V5E6/sfw5ke3B9zyVQ=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "6ef009bf4c4873cdc1a621826722bdea7c03e62c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "type": "github"
       }
     },
     "snowfall-lib": {
@@ -363,6 +925,21 @@
         "type": "github"
       }
     },
+    "systems_4": {
+      "locked": {
+        "lastModified": 1689347949,
+        "narHash": "sha256-12tWmuL2zgBgZkdoB6qXZsgJEH9LR3oUgpaQq2RbI80=",
+        "owner": "nix-systems",
+        "repo": "default-linux",
+        "rev": "31732fcf5e8fea42e59c2488ad31a0e651500f68",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default-linux",
+        "type": "github"
+      }
+    },
     "treefmt-nix": {
       "inputs": {
         "nixpkgs": "nixpkgs_2"
@@ -379,6 +956,97 @@
         "owner": "numtide",
         "repo": "treefmt-nix",
         "type": "github"
+      }
+    },
+    "treefmt-nix_2": {
+      "inputs": {
+        "nixpkgs": [
+          "xinux-modules",
+          "xinux-lib",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1773297127,
+        "narHash": "sha256-6E/yhXP7Oy/NbXtf1ktzmU8SdVqJQ09HC/48ebEGBpk=",
+        "owner": "numtide",
+        "repo": "treefmt-nix",
+        "rev": "71b125cd05fbfd78cab3e070b73544abe24c5016",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "treefmt-nix",
+        "type": "github"
+      }
+    },
+    "utils": {
+      "inputs": {
+        "systems": [
+          "xinux-modules",
+          "systems"
+        ]
+      },
+      "locked": {
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "uz-xkb": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1785762462,
+        "narHash": "sha256-IOHsJ1Rcm9xQASi+q4xtlPzS+6zybC4S2KDZKA5VVwk=",
+        "ref": "refs/heads/main",
+        "rev": "bc49f375dfbf1307acf975d21297c6e8b2ad4185",
+        "shallow": true,
+        "type": "git",
+        "url": "https://git.oss.uzinfocom.uz/mirrors/uzbek-linux-keyboard"
+      },
+      "original": {
+        "shallow": true,
+        "type": "git",
+        "url": "https://git.oss.uzinfocom.uz/mirrors/uzbek-linux-keyboard"
+      }
+    },
+    "xin": {
+      "inputs": {
+        "libxinux": [
+          "xinux-modules",
+          "libxinux"
+        ],
+        "nixpkgs": [
+          "xinux-modules",
+          "nixpkgs"
+        ],
+        "xinux-lib": [
+          "xinux-modules",
+          "xinux-lib"
+        ]
+      },
+      "locked": {
+        "lastModified": 1778240364,
+        "narHash": "sha256-DJlxIsikFFjljOHwe3N/vySHSUxgsD9e3zSKosS4Qf8=",
+        "ref": "main",
+        "rev": "8410cb698a7c34e3fa9cc22cc58fac79cdc266fe",
+        "shallow": true,
+        "type": "git",
+        "url": "https://git.oss.uzinfocom.uz/xinux/xin"
+      },
+      "original": {
+        "ref": "main",
+        "shallow": true,
+        "type": "git",
+        "url": "https://git.oss.uzinfocom.uz/xinux/xin"
       }
     },
     "xinux-lib": {
@@ -402,6 +1070,218 @@
         "owner": "xinux-org",
         "repo": "lib",
         "type": "github"
+      }
+    },
+    "xinux-lib_2": {
+      "inputs": {
+        "flake-compat": "flake-compat_4",
+        "flake-parts": [
+          "xinux-modules",
+          "flake-parts"
+        ],
+        "flake-utils-plus": "flake-utils-plus_3",
+        "git-hooks": "git-hooks",
+        "nixpkgs": [
+          "xinux-modules",
+          "nixpkgs"
+        ],
+        "treefmt-nix": "treefmt-nix_2"
+      },
+      "locked": {
+        "lastModified": 1787307424,
+        "narHash": "sha256-C+ZlPU38AdDA08n61ZrTvIbOuio006OzcPoZhZn6xZc=",
+        "ref": "main",
+        "rev": "9d9b6dbaceb160ef4040f17b3a388bab9a1d567d",
+        "shallow": true,
+        "type": "git",
+        "url": "https://git.oss.uzinfocom.uz/xinux/lib"
+      },
+      "original": {
+        "ref": "main",
+        "shallow": true,
+        "type": "git",
+        "url": "https://git.oss.uzinfocom.uz/xinux/lib"
+      }
+    },
+    "xinux-module-manager": {
+      "inputs": {
+        "git-hooks": [
+          "xinux-modules",
+          "xinux-lib",
+          "git-hooks"
+        ],
+        "nixpkgs": [
+          "xinux-modules",
+          "nixpkgs"
+        ],
+        "treefmt-nix": [
+          "xinux-modules",
+          "xinux-lib",
+          "treefmt-nix"
+        ],
+        "xinux-lib": [
+          "xinux-modules",
+          "xinux-lib"
+        ]
+      },
+      "locked": {
+        "lastModified": 1787908961,
+        "narHash": "sha256-4oTRn/5c6RHirDKaiSN8r+ge8WC1gA/5tyHH/abaVns=",
+        "ref": "main",
+        "rev": "aca5b4c6e31870a17f1ab0d9ecf26fb526177ec5",
+        "shallow": true,
+        "type": "git",
+        "url": "https://git.oss.uzinfocom.uz/xinux/module-manager"
+      },
+      "original": {
+        "ref": "main",
+        "shallow": true,
+        "type": "git",
+        "url": "https://git.oss.uzinfocom.uz/xinux/module-manager"
+      }
+    },
+    "xinux-modules": {
+      "inputs": {
+        "aagl": "aagl",
+        "bleur": "bleur",
+        "cachyos-kernel": "cachyos-kernel",
+        "e-imzo-manager": "e-imzo-manager",
+        "flake-parts": "flake-parts_2",
+        "flake-utils": "flake-utils_4",
+        "helium": "helium",
+        "libxinux": "libxinux",
+        "mac-style-plymouth": "mac-style-plymouth",
+        "nix-software-center": "nix-software-center",
+        "nixpkgs": "nixpkgs_3",
+        "relago": "relago_2",
+        "systems": "systems_4",
+        "uz-xkb": "uz-xkb",
+        "xin": "xin",
+        "xinux-lib": "xinux-lib_2",
+        "xinux-module-manager": "xinux-module-manager",
+        "xinux-settings": "xinux-settings",
+        "xinux-tour": "xinux-tour",
+        "xinux-wallpaper": "xinux-wallpaper",
+        "zen-browser": "zen-browser"
+      },
+      "locked": {
+        "lastModified": 1791374460,
+        "narHash": "sha256-7GSsz+l/kWKcE424m7USJsYRb5h6Rivs/i+bMAn/qR4=",
+        "ref": "main",
+        "rev": "5dc40bb44d3de2a3dc30ff97acd939ee6059e485",
+        "shallow": true,
+        "type": "git",
+        "url": "https://git.oss.uzinfocom.uz/xinux/modules"
+      },
+      "original": {
+        "ref": "main",
+        "shallow": true,
+        "type": "git",
+        "url": "https://git.oss.uzinfocom.uz/xinux/modules"
+      }
+    },
+    "xinux-settings": {
+      "inputs": {
+        "nixpkgs": [
+          "xinux-modules",
+          "nixpkgs"
+        ],
+        "xinux-lib": [
+          "xinux-modules",
+          "xinux-lib"
+        ]
+      },
+      "locked": {
+        "lastModified": 1791364451,
+        "narHash": "sha256-lQj64b0VK7tt0vTeDm3gkrQGqvOLIGhebfrJa9ePfG4=",
+        "ref": "main",
+        "rev": "a9319faacc8b8fdef3fda65ffd78fbac3152aa3b",
+        "shallow": true,
+        "type": "git",
+        "url": "https://git.oss.uzinfocom.uz/xinux/settings"
+      },
+      "original": {
+        "ref": "main",
+        "shallow": true,
+        "type": "git",
+        "url": "https://git.oss.uzinfocom.uz/xinux/settings"
+      }
+    },
+    "xinux-tour": {
+      "inputs": {
+        "flake-utils": [
+          "xinux-modules",
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "xinux-modules",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1780054532,
+        "narHash": "sha256-qsU43YTpDDuKwUZU8QtbcAYbdcPVWYJJC5vSpBCsgI4=",
+        "ref": "main",
+        "rev": "f023b9e9c987adbcedc9747a93c9a78a66c18b81",
+        "shallow": true,
+        "type": "git",
+        "url": "https://git.oss.uzinfocom.uz/xinux/xinux-tour"
+      },
+      "original": {
+        "ref": "main",
+        "shallow": true,
+        "type": "git",
+        "url": "https://git.oss.uzinfocom.uz/xinux/xinux-tour"
+      }
+    },
+    "xinux-wallpaper": {
+      "inputs": {
+        "flake-parts": [
+          "xinux-modules",
+          "flake-parts"
+        ],
+        "nixpkgs": [
+          "xinux-modules",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1788354205,
+        "narHash": "sha256-c1NPUVg47Av3DRUHnK/CjI/nBhe4r/UfdvJ9uaekfYg=",
+        "ref": "main",
+        "rev": "2db1ceca8d659a627a3db7a2d5894f64be8b30c7",
+        "shallow": true,
+        "type": "git",
+        "url": "https://git.oss.uzinfocom.uz/xinux/wallpaper"
+      },
+      "original": {
+        "ref": "main",
+        "shallow": true,
+        "type": "git",
+        "url": "https://git.oss.uzinfocom.uz/xinux/wallpaper"
+      }
+    },
+    "zen-browser": {
+      "inputs": {
+        "home-manager": "home-manager",
+        "nixpkgs": [
+          "xinux-modules",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1791367832,
+        "narHash": "sha256-MSFMvb579iNOOx89nEAligQJaLB6Qv1QfAw31eC4JIU=",
+        "ref": "refs/heads/main",
+        "rev": "a2caf7fe6fb6e4786591acb9cdf1306db1b011f7",
+        "shallow": true,
+        "type": "git",
+        "url": "https://git.oss.uzinfocom.uz/mirrors/zen-browser-flake"
+      },
+      "original": {
+        "shallow": true,
+        "type": "git",
+        "url": "https://git.oss.uzinfocom.uz/mirrors/zen-browser-flake"
       }
     }
   },

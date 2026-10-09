@@ -129,6 +129,8 @@
 
     sbctl
     disko
+    wezterm
+    ghostty
   ];
 
   fonts.packages = with pkgs; [
@@ -154,7 +156,7 @@
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
@@ -262,16 +264,4 @@
   # CPU performance scaling
   services.thermald.enable = true;
   services.power-profiles-daemon.enable = true;
-
-  services.auto-cpufreq.enable = false;
-  # services.auto-cpufreq.settings = {
-  #   battery = {
-  #     governor = "powersave";
-  #     turbo = "never";
-  #   };
-  #   charger = {
-  #     governor = "performance";
-  #     turbo = "auto";
-  #   };
-  # };
 }

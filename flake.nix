@@ -22,6 +22,10 @@
       url = "github:xinux-org/nix-data";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    xinux-modules = {
+      url = "git+https://git.oss.uzinfocom.uz/xinux/modules?ref=main&shallow=1";
+    };
   };
 
   outputs =
@@ -34,6 +38,7 @@
       systems.modules.nixos = with inputs; [
         relago.nixosModules.default
         nix-data.nixosModules.nix-data
+        xinux-modules.nixosModules.shell
       ];
 
       snowfall = {
