@@ -131,6 +131,7 @@
     disko
     wezterm
     ghostty
+    xinux-settings
   ];
 
   fonts.packages = with pkgs; [

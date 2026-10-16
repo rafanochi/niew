@@ -3,7 +3,7 @@
 
   inputs = {
     # NixOS official package source, using the nixos-26.05 branch here
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     snowfall-lib = {
       url = "github:snowfallorg/lib";
@@ -26,6 +26,14 @@
     xinux-modules = {
       url = "git+https://git.oss.uzinfocom.uz/xinux/modules?ref=main&shallow=1";
     };
+    xinux-settings = {
+      url = "git+https://git.oss.uzinfocom.uz/xinux/settings?ref=main&shallow=1";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        # xinux-lib.follows = "xinux-lib";
+      };
+    };
+
   };
 
   outputs =
