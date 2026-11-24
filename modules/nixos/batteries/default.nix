@@ -1,3 +1,6 @@
+# Here are configs that are not device nor user specific.
+# These can be and should be used in all of them
+
 {
   config,
   lib,
@@ -15,27 +18,12 @@ with lib;
   options.batteries.enable = mkEnableOption "Batteries";
 
   config = mkIf cfg.enable {
-
-    # batteries
-    # CPU performance scaling
-    services.thermald.enable = true;
-    services.power-profiles-daemon.enable = true;
-
     # direnv
     programs.direnv = {
       enable = true;
       nix-direnv.enable = true;
       silent = true;
     };
-
-    # Power management
-    powerManagement = {
-      enable = true;
-      powertop.enable = true;
-    };
-
-    # Bluetooth tools
-    hardware.bluetooth.enable = true;
 
     # Zsh
     programs.starship.enable = true;
@@ -64,11 +52,19 @@ with lib;
     };
 
     # VERY NEEDED FONTS
-    fonts.packages = with pkgs; [
-      nerd-fonts.hack
-      nerd-fonts.jetbrains-mono
-      inputs.apple-fonts.packages.${pkgs.system}.sf-pro
-      inputs.apple-fonts.packages.${pkgs.system}.sf-mono-nerd
+    fonts.packages = with inputs.apple-fonts.packages.${pkgs.system}; [
+      sf-pro
+      sf-mono-nerd
+      ny-nerd
+    ];
+
+    environment.systemPackages = with pkgs; [
+      evil-helix
+      telegram-desktop
+      git
+      nixd
+      nil
+      qutebrowser
     ];
   };
 }

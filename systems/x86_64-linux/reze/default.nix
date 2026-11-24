@@ -5,7 +5,6 @@
 {
   lib,
   pkgs,
-  inputs,
   ...
 }:
 
@@ -70,9 +69,6 @@
     variant = "";
   };
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -106,6 +102,8 @@
       #  thunderbird
       wl-clipboard
       disko
+      fractal
+      zed-editor
     ];
   };
 
@@ -120,23 +118,14 @@
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
-    evil-helix
-    telegram-desktop
     ulauncher
-    git
     unzip
-    fractal
-    nixd
-    nil
-    zed-editor
-    openrgb
 
     sbctl
     disko
     wezterm
     ghostty
     emacs
-    qutebrowser
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -206,9 +195,9 @@
     # xserver.enable = true;
   };
 
-  virtualisation.waydroid.enable = true;
+  # virtualisation.waydroid.enable = true;
   # Newer kernel versions may need
-  virtualisation.waydroid.package = pkgs.waydroid-nftables;
+  # virtualisation.waydroid.package = pkgs.waydroid-nftables;
 
   services.udev.extraRules =
     let
@@ -231,6 +220,19 @@
   #   HandleLidSwitchExternalPower = "lock";
   #   HandleLidSwitchDocked = "ignore";
   # };
+
+  # CPU performance scaling
+  services.thermald.enable = true;
+  services.power-profiles-daemon.enable = true;
+
+  # Power management
+  powerManagement = {
+    enable = true;
+    powertop.enable = true;
+  };
+
+  # Bluetooth tools
+  hardware.bluetooth.enable = true;
 
   # Include necessary base configurations
   batteries.enable = true;
