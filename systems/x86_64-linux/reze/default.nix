@@ -6,7 +6,6 @@
   lib,
   pkgs,
   inputs,
-  system,
   ...
 }:
 
@@ -111,7 +110,7 @@
   };
 
   # Install firefox.
-  programs.firefox.enable = true;
+  # programs.firefox.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -138,15 +137,6 @@
     ghostty
     emacs
     qutebrowser
-  ];
-
-  fonts.packages = with pkgs; [
-    mplus-outline-fonts.githubRelease
-    dina-font
-    nerd-fonts.hack
-    nerd-fonts.jetbrains-mono
-    inputs.apple-fonts.packages.${pkgs.system}.sf-pro
-    inputs.apple-fonts.packages.${pkgs.system}.sf-mono-nerd
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -191,39 +181,6 @@
   services.flatpak.enable = true;
   xdg.portal.enable = true;
 
-  programs.starship.enable = true;
-
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    autosuggestions.enable = true;
-    syntaxHighlighting.enable = true;
-
-    ohMyZsh = {
-      enable = true;
-      plugins = [
-        "git"
-        "z"
-      ];
-    };
-
-    shellAliases = {
-      ll = "ls -l";
-      edit = "sudo -e";
-      update = "sudo nixos-rebuild switch";
-      allow = "direnv allow";
-      reload = "direnv reload";
-      open = "xdg-open";
-    };
-  };
-
-  services.hardware.openrgb = {
-    enable = true;
-    package = pkgs.openrgb-with-all-plugins;
-    motherboard = "intel";
-    server.port = 6742;
-  };
-
   steam.enable = true;
 
   programs.nix-data = {
@@ -232,10 +189,6 @@
     flake = "/home/rafa/niew/flake.nix";
     flakearg = "reze"; # your hostname
   };
-
-  programs.direnv.enable = true;
-  programs.direnv.nix-direnv.enable = true;
-  programs.direnv.silent = true;
 
   # GNOME
   # services.displayManager.gdm.enable = true;
@@ -252,15 +205,10 @@
     # Optionally enable xserver
     # xserver.enable = true;
   };
-  hardware.bluetooth.enable = true;
 
   virtualisation.waydroid.enable = true;
   # Newer kernel versions may need
   virtualisation.waydroid.package = pkgs.waydroid-nftables;
-
-  # Power management
-  powerManagement.enable = true;
-  powerManagement.powertop.enable = true;
 
   services.udev.extraRules =
     let
@@ -284,7 +232,6 @@
   #   HandleLidSwitchDocked = "ignore";
   # };
 
-  # CPU performance scaling
-  services.thermald.enable = true;
-  services.power-profiles-daemon.enable = true;
+  # Include necessary base configurations
+  batteries.enable = true;
 }
