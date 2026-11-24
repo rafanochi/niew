@@ -2,7 +2,13 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ lib, pkgs, ... }:
+{
+  lib,
+  pkgs,
+  inputs,
+  system,
+  ...
+}:
 
 {
   imports = [
@@ -116,7 +122,6 @@
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     evil-helix
-    gtk-engine-murrine
     telegram-desktop
     ulauncher
     git
@@ -131,13 +136,17 @@
     disko
     wezterm
     ghostty
-    xinux-settings
+    emacs
+    qutebrowser
   ];
 
   fonts.packages = with pkgs; [
     mplus-outline-fonts.githubRelease
     dina-font
     nerd-fonts.hack
+    nerd-fonts.jetbrains-mono
+    inputs.apple-fonts.packages.${pkgs.system}.sf-pro
+    inputs.apple-fonts.packages.${pkgs.system}.sf-mono-nerd
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -228,9 +237,22 @@
   programs.direnv.nix-direnv.enable = true;
   programs.direnv.silent = true;
 
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
-  gnome.enable = true;
+  # GNOME
+  # services.displayManager.gdm.enable = true;
+  # services.desktopManager.gnome.enable = true;
+  # gnome.enable = true;
+
+  # KDE
+  services = {
+    desktopManager.plasma6.enable = true;
+
+    # Default display manager for Plasma
+    displayManager.plasma-login-manager.enable = true;
+
+    # Optionally enable xserver
+    # xserver.enable = true;
+  };
+  hardware.bluetooth.enable = true;
 
   virtualisation.waydroid.enable = true;
   # Newer kernel versions may need

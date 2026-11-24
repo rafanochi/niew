@@ -26,14 +26,9 @@
     xinux-modules = {
       url = "git+https://git.oss.uzinfocom.uz/xinux/modules?ref=main&shallow=1";
     };
-    xinux-settings = {
-      url = "git+https://git.oss.uzinfocom.uz/xinux/settings?ref=main&shallow=1";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        # xinux-lib.follows = "xinux-lib";
-      };
-    };
 
+    apple-fonts.url = "github:pperanich/nix-apple-fonts";
+    apple-fonts.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
